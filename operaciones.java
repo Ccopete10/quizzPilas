@@ -40,25 +40,23 @@ public class operaciones {
         }else{
             int size = cloneStack.size();
             int count = 0;
-            Stack<Integer> positions = new Stack<>();
+            boolean finded = false; 
 
             for (int i = 0; i < size; i++) {
                 count ++;
                 if (cloneStack.peek().equals(search)) {
                     System.out.println("El dato " + "\"" + search + "\"" + " esta en la posicion: " + count);
-                    positions.push(count);
+                    finded = true;
                     cloneStack.pop();
                 }else{
                     cloneStack.pop();
                 }
                 
             }
-            if (positions.isEmpty()) {
+            if (!finded) {
                 System.out.println("No se encontro el dato que ingresaste");
                 searching(stack);
             }      
         }
     }
-
-
 }
